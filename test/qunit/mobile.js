@@ -1,3 +1,7 @@
+'use strict';
+
+/*jshint browser: true, jquery: true, latedef: false, qunit: true*/
+
 module('SuperGenPass mobile version');
 
 // Enumerate jQuery selectors for caching.
@@ -8,14 +12,17 @@ var selectors =
     'Passwd',
     'Secret',
     'Domain',
-    'DisableTLD',
+    'RemoveSubdomains',
     'Len',
     'MethodMD5',
     'MethodSHA512',
-    'DisableTLD',
+    'SaveDefaults',
     'Generate',
     'Output'
   ];
+
+// Clear local storage.
+localStorage.clear();
 
 // Create click event.
 var clickEvent = document.createEvent('Event');
@@ -40,7 +47,7 @@ var setupTest1 = function () {
   $el.Domain.val('https://login.example.com');
   $el.Len.val('10');
   $el.MethodMD5.prop('checked', true);
-  $el.DisableTLD.prop('checked', false);
+  $el.RemoveSubdomains.prop('checked', true);
 };
 
 var setupTest2 = function () {
@@ -62,7 +69,7 @@ var setupTest5 = function () {
 
 var setupTest6 = function () {
   $el.Domain.val('https://login.example.com');
-  $el.DisableTLD.prop('checked', true);
+  $el.RemoveSubdomains.prop('checked', false);
 };
 
 
@@ -96,13 +103,14 @@ var nextTest = function () {
 var runTest = function () {
   sendClick();
   setTimeout(function () {
-    ok($el.Output.text() === testData[testIndex][1], 'Generated "' + testData[testIndex][1] + '".');
-    testIndex++;
+    ok($el.Output.text() === testData[testIndex][1], 'Generated "' + $el.Output.text() + '" but expected "' + testData[testIndex][1] + '".');
+    testIndex = testIndex + 1;
     nextTest();
   }, 100);
 };
 
 var testLocalStorage = function () {
+  $el.SaveDefaults[0].dispatchEvent(clickEvent);
   ok(localStorage.getItem('Len') === '24', 'Password length value stored.');
   ok(localStorage.getItem('Salt') === 'ssshh', 'Secret password value stored.');
   ok(localStorage.getItem('Method') === 'sha512', 'Hash method setting stored.');

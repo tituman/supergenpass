@@ -253,9 +253,9 @@ input[type="radio"]:checked + label {
 }
 
 
-/* TLD toggle */
+/* Subdomains toggle */
 
-#TLDField {
+#SubdomainsField {
    position: absolute;
    top: 0;
    right: 9px;
@@ -267,30 +267,31 @@ input[type="checkbox"] {
 
 input[type="checkbox"] + label {
    padding: 2px 4px;
-   color: #999;
-   background-color: #fff;
+   color: #fff;
+   background-color: #356;
    font-size: 12px;
-   border: solid 1px #999;
+   border: solid 1px #023;
    border-radius: 3px;
+   text-decoration: line-through;
    cursor: pointer;
 }
 
 input[type="checkbox"] + label:hover {
-   color:#333;
-   border-color: #333;
+   color: #fff;
+   border-color: #023;
+   text-decoration: line-through;
 }
 
 input[type="checkbox"]:checked + label {
-   color: #fff;
-   background-color: #356;
-   border-color: #023;
-   text-decoration: line-through;
+   color: #999;
+   background-color: #fff;
+   border-color: #999;
+   text-decoration: none;
 }
 
 input[type="checkbox"]:checked + label:hover {
-   color: #fff;
-   border-color: #023;
-   text-decoration: line-through;
+  color: #333;
+  border-color: #333;
 }
 
 
@@ -322,6 +323,35 @@ input[type="checkbox"]:checked + label:hover {
 
 .Advanced #Domain {
    padding-right: 45px;
+}
+
+
+/* Save button */
+
+#SaveDefaults {
+   float: right;
+   width: 18px;
+   height: 18px;
+   margin-right: 8px;
+   background-color: #fff;
+   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgAgMAAAAOFJJnAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAJUExURUxpcQAAAAAAAD5+edwAAAACdFJOUwAH6PdYmwAAAD9JREFUGNPF0KsRACAMwNAcklE6GlMwSiXXKSmfojAoop4O2UYNRPEEzJFVakADLWDvgOLY3cDsE+TA9o60oB24XkzxWNPvZAAAAABJRU5ErkJggg==');
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-size: 16px 16px;
+   -webkit-transition: background 0.5s linear;
+   transition: background 0.5s linear;
+   opacity: 0.7;
+   cursor: pointer;
+}
+
+#SaveDefaults:hover {
+   opacity: 1.0;
+}
+
+#SaveDefaults.Success {
+   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAB+UExURUxpcQoKCuPj48HBwQMDAwcHBxAQEAAAAAAAAA0NDeTk5ImJiR0dHXFxcTk5ORUVFXV1dVdXV5ycnIuLiykpKfDw8G1tbebm5n9/f/X19UlJSYaGhhcXF25ubunp6eDg4DIyMmlpaTU1NZubm9XV1VFRUYSEhI6OjuHh4aurq4zmssgAAAAIdFJOUwD///////8HZqwuHAAAAJZJREFUOMvVk8sSgjAMRYM8vEVURETBNz7A//9BFshMHSa3GzecVZue6aRJKiLQkB57bTNEMRK++yFMBTgFOAVMVeiZ/wo6fxJEQRUO+YYKd1T0hgduJROeXnSlOdT40CQbvOgrLsZrqXDGW63DMtrKPjzphVoBWYGjLszWMKHZkVL7AZDSXiyCJB7PlqubjoGw/q9y3gER0xJYR8gIqQAAAABJRU5ErkJggg==');
+   -webkit-transition: background 0s linear;
+   transition: background 0s linear;
 }
 
 

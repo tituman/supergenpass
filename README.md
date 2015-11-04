@@ -1,12 +1,16 @@
 # SuperGenPass
 
-[![Build Status][build-status]][travis-ci]
+[![Build status][build-status]][travis-ci]
 
-[![Sauce Status][sauce-status]][saucelabs]
+[![SauceLabs status][saucelabs-status]][saucelabs]
 
-This is the official repository of [SuperGenPass][sgp]. Please see the
-[homepage][sgp] to obtain the bookmarklet and the mobile version. For
-questions, please see the [FAQ][faq].
+This is the official repository of [SuperGenPass][sgp]. It contains code for the
+bookmarklet and the mobile version. The underlying algorithm that is used by
+SuperGenPass to generate passwords has its own repository:
+[chriszarate/supergenpass-lib][sgp-lib].
+
+Please see the [homepage][sgp] to obtain the latest stable version of the
+bookmarklet and the mobile version. For questions, please see the [FAQ][faq].
 
 ## About
 
@@ -59,10 +63,11 @@ are not reviewed and compatibility is not guaranteed.
 
 
 [sgp]: http://supergenpass.com
+[sgp-lib]: https://github.com/chriszarate/supergenpass-lib
 [build-status]: https://travis-ci.org/chriszarate/supergenpass.svg?branch=master
-[sauce-status]: https://saucelabs.com/browser-matrix/zarate.svg
 [travis-ci]: https://travis-ci.org/chriszarate/supergenpass
-[saucelabs]: https://saucelabs.com/u/zarate
+[saucelabs-status]: https://saucelabs.com/browser-matrix/supergenpass.svg
+[saucelabs]: https://saucelabs.com/u/supergenpass
 [faq]: https://github.com/chriszarate/supergenpass/wiki/FAQ
 [grunt]: http://gruntjs.com
 [gp]: https://github.com/chriszarate/genpass
